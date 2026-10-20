@@ -2,86 +2,85 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { DotPattern } from "@/components/ui/dot-pattern";
-import { cn } from "@/lib/utils";
+import KineticGrid from "@/components/ui/kinetic-grid";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 pt-16 overflow-hidden">
-      <DotPattern
-        cy={1}
-        cr={1}
-        cx={1}
-        className={cn(
-          "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]",
-        )}
-      />
-      <div className="max-w-[720px] mx-auto w-full py-32 sm:py-40 text-center">
+    <KineticGrid>
+      <section className="relative min-h-[calc(100vh-5rem)] sm:min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-16 sm:py-32 overflow-hidden text-center">
+
+        {/* Big prominent logo with proper padding so it's never cut off */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2, ease }}
-          className="flex justify-center"
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.05, ease }}
+          className="mb-6 sm:mb-8"
         >
-          <Image
-            src="/hackerrank-icon.png"
-            alt=""
-            width={52}
-            height={52}
-            className="w-13 h-13 rounded-lg mb-8"
-            priority
-          />
+          <div className="relative size-24 sm:size-28 md:size-32 rounded-2xl bg-white p-2 shadow-xl shadow-accent/20 border border-border/80 mx-auto">
+            <Image
+              src="/hackerrank-icon.png"
+              alt="HackerRank"
+              fill
+              className="object-contain rounded-xl"
+              priority
+            />
+          </div>
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-[-0.03em] leading-[1.1] text-foreground"
+          transition={{ duration: 0.8, delay: 0.2, ease }}
+          className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-[-0.035em] leading-[1.08] text-foreground"
         >
           HackerRank
           <br />
           Campus Crew
-          <br />
-          <span className="text-foreground/40 font-normal text-3xl sm:text-4xl lg:text-5xl">
-            at Saveetha Engineering College
-          </span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5, ease }}
-          className="mt-6 text-xl leading-relaxed text-foreground/60 max-w-[540px] mx-auto"
+          transition={{ duration: 0.7, delay: 0.35, ease }}
+          className="mt-4 text-xl sm:text-2xl font-semibold leading-relaxed text-foreground/80"
         >
-          Monthly coding contests, hackathons, and workshops
-          powered by the same platform companies use to hire
-          engineers. We&apos;re building the crew now.
+          at Saveetha Engineering College
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.45, ease }}
+          className="mt-5 text-base sm:text-lg leading-[1.7] text-foreground/75 max-w-[520px]"
+        >
+          Monthly coding contests, hackathons, and workshops powered by the same
+          platform companies use to hire engineers.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.65, ease }}
-          className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+          transition={{ duration: 0.7, delay: 0.55, ease }}
+          className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4"
         >
-          <a
-            href="#waitlist"
-            className="h-12 px-8 rounded-full bg-accent text-white text-base font-medium cursor-pointer transition-colors duration-150 hover:bg-accent-hover active:scale-[0.98] flex items-center"
+          <button
+            type="button"
+            onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
+            className="h-12 px-8 rounded-full bg-accent text-white text-base font-semibold shadow-lg shadow-accent/30 cursor-pointer transition-all duration-150 hover:bg-accent-hover hover:shadow-xl hover:shadow-accent/40 active:scale-[0.98] inline-flex items-center"
           >
             Join the waitlist
-          </a>
-          <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-base text-accent font-medium">
-            <span className="relative flex h-2 w-2">
+          </button>
+          <div className="inline-flex items-center gap-2 text-sm sm:text-base font-medium text-foreground/75 bg-black/[0.04] px-3.5 py-1.5 rounded-full border border-border/70">
+            <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent" />
             </span>
             200+ students signed up
           </div>
         </motion.div>
-      </div>
-    </section>
+      </section>
+    </KineticGrid>
   );
 }

@@ -5,6 +5,7 @@ import WhatYouGet from "@/components/WhatYouGet";
 import Events from "@/components/Events";
 import FAQ from "@/components/FAQ";
 import WaitlistForm from "@/components/WaitlistForm";
+import CrewLeads from "@/components/CrewLeads";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Events />
       <FAQ />
       <WaitlistForm />
+      <CrewLeads />
       <Footer />
     </>
   );

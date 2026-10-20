@@ -20,9 +20,7 @@ export default function Footer() {
         {
           title: "Community",
           links: [
-            { label: "Instagram", href: "https://instagram.com/" },
-            { label: "LinkedIn", href: "https://linkedin.com/" },
-            { label: "YouTube", href: "https://youtube.com/" },
+            { label: "WhatsApp Group", href: "https://chat.whatsapp.com/Jny6C3ko5MgHo1ENB5ddKj" },
           ],
         },
         {

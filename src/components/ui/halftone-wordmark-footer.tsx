@@ -92,37 +92,93 @@ export function hwfFitSize(measured: number, width: number) {
 const HWF_CSS = `
 .hwf-root {
   position: relative; width: 100%; overflow: hidden; isolation: isolate;
+  height: var(--hwf-height, 560px);
+  min-height: 440px;
   background: var(--hwf-bg); color: var(--hwf-ink); -webkit-font-smoothing: antialiased;
 }
-.hwf-root canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; max-width: none; }
+.hwf-root canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; max-width: none; pointer-events: none; }
 .hwf-top {
-  position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.25fr) repeat(var(--hwf-cols, 3), minmax(0, 1fr));
-  gap: 24px; padding: clamp(22px, 3.4vw, 40px) clamp(20px, 3.4vw, 44px) 0;
-  font-family: var(--hwf-mono); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; line-height: 1.75;
+  position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.25fr) repeat(var(--hwf-cols, 3), minmax(0, 1fr));
+  gap: 24px; padding: clamp(28px, 3.4vw, 44px) clamp(20px, 3.4vw, 44px) 0;
+  font-family: var(--hwf-mono); font-size: 11px; letter-spacing: .15em; text-transform: uppercase; line-height: 1.75;
 }
-.hwf-brand strong { display: block; font-weight: 500; }
-.hwf-brand span { opacity: .45; }
-.hwf-col h3 { margin: 0; font: inherit; opacity: .4; font-weight: 500; }
-.hwf-col ul { list-style: none; margin: 0; padding: 0; }
+.hwf-brand strong { display: block; font-weight: 600; font-size: 13px; color: #ffffff; letter-spacing: 0.05em; }
+.hwf-brand span { opacity: .65; font-size: 11px; margin-top: 3px; display: block; }
+.hwf-col h3 { margin: 0; font: inherit; opacity: .75; font-weight: 600; color: var(--hwf-warm); font-size: 11px; }
+.hwf-col ul { list-style: none; margin: 8px 0 0; padding: 0; }
+.hwf-col li { margin-bottom: 4px; }
 .hwf-col a, .hwf-up {
-  color: inherit; text-decoration: none; opacity: .78; background: none; border: 0; padding: 0;
-  font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer;
+  color: inherit; text-decoration: none; opacity: .85; background: none; border: 0; padding: 4px 0;
+  font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; display: inline-block;
   background-image: linear-gradient(currentColor, currentColor); background-size: 0% 1px;
   background-repeat: no-repeat; background-position: 0 100%; transition: opacity .25s ease, background-size .35s cubic-bezier(.2,.7,.1,1);
 }
 .hwf-col a:hover, .hwf-up:hover { opacity: 1; background-size: 100% 1px; }
 .hwf-col a:focus-visible, .hwf-up:focus-visible { outline: 1px solid currentColor; outline-offset: 3px; opacity: 1; }
 .hwf-rule {
-  position: relative; z-index: 1; display: flex; justify-content: flex-end; align-items: center; gap: 16px;
-  margin: clamp(18px, 2.6vw, 30px) clamp(20px, 3.4vw, 44px) 0; padding-top: 12px;
-  border-top: 0.5px solid color-mix(in srgb, var(--hwf-ink) 16%, transparent);
-  font-family: var(--hwf-mono); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase;
+  position: relative; z-index: 2; display: flex; justify-content: flex-end; align-items: center; gap: 16px;
+  margin: clamp(20px, 2.6vw, 32px) clamp(20px, 3.4vw, 44px) 0; padding-top: 14px;
+  border-top: 0.5px solid color-mix(in srgb, var(--hwf-ink) 20%, transparent);
+  font-family: var(--hwf-mono); font-size: 11px; letter-spacing: .15em; text-transform: uppercase;
 }
 .hwf-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
 @media (max-width: 720px) {
-  .hwf-top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); row-gap: 18px; }
-  .hwf-brand { grid-column: 1 / -1; }
+  .hwf-root {
+    height: auto !important;
+    min-height: 480px;
+    padding-bottom: 28px;
+  }
+  .hwf-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 18px;
+    padding: 32px 20px 0;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .hwf-brand {
+    grid-column: 1 / -1;
+    margin-bottom: 6px;
+  }
+  .hwf-brand strong {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+  }
+  .hwf-brand span {
+    opacity: 0.75;
+    font-size: 12px;
+  }
+  .hwf-col h3 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--hwf-warm);
+    opacity: 0.95;
+    margin-bottom: 6px;
+  }
+  .hwf-col li {
+    margin-bottom: 6px;
+  }
+  .hwf-col a {
+    font-size: 13px;
+    opacity: 0.9;
+    padding: 6px 0;
+  }
+  .hwf-rule {
+    margin: 28px 20px 0;
+    padding-top: 16px;
+  }
+  .hwf-up {
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.08);
+    opacity: 0.95;
+  }
 }
+
 @media (prefers-reduced-motion: reduce) {
   .hwf-col a, .hwf-up { transition: none; }
 }
@@ -184,7 +240,7 @@ export default function HalftoneWordmarkFooter({
     let count = 0
     let grainTile = null as HTMLCanvasElement | null
     const ink = hwfHex(opts.current.colors.ink) || [233, 228, 218]
-    const warm = hwfHex(opts.current.colors.warm) || [233, 118, 43]
+    const warm = hwfHex(opts.current.colors.warm) || [5, 199, 112]
 
     const layout = () => {
       const o = opts.current
@@ -195,6 +251,8 @@ export default function HalftoneWordmarkFooter({
       canvas.width = Math.round(w * dpr)
       canvas.height = Math.round(h * dpr)
 
+      const isMobile = w < 720
+
       const mask = document.createElement("canvas")
       mask.width = w
       mask.height = h
@@ -202,12 +260,11 @@ export default function HalftoneWordmarkFooter({
       if (!m) return
 
       const lines = (o.wordmark || " ").split("\n")
-      const c = Math.max(0, Math.min(0.6, o.crop))
+      const c = isMobile ? 0.04 : Math.max(0, Math.min(0.6, o.crop))
       m.fillStyle = "#000"
       m.textBaseline = "alphabetic"
 
       if (lines.length > 1) {
-        // Multi-line: fit the widest line to the canvas width, stack them
         const face = o.fontWeight + " 100px " + o.fontFamily
         m.font = face
         let maxMeasured = 0
@@ -215,14 +272,18 @@ export default function HalftoneWordmarkFooter({
           const mw = m.measureText(line).width
           if (mw > maxMeasured) maxMeasured = mw
         }
-        const fit = hwfFitSize(maxMeasured, w * 1.02)
+        const fit = hwfFitSize(maxMeasured, w * (isMobile ? 0.94 : 1.02))
         m.font = o.fontWeight + " " + fit + "px " + o.fontFamily
         const sampleBox = m.measureText(lines[0])
         const cap = sampleBox.actualBoundingBoxAscent || fit * 0.72
-        const lineHeight = cap * 1.05
+        const lineHeight = cap * 1.08
         const totalHeight = lineHeight * lines.length
-        // Position so the block's bottom edge is cropped by `crop`
-        const baseY = h + totalHeight * c - lineHeight * (lines.length - 1) * 0.05
+        
+        // On mobile, position so the wordmark sits inside the footer with clean padding
+        const baseY = isMobile
+          ? h - 14
+          : h + totalHeight * c - lineHeight * (lines.length - 1) * 0.05
+
         for (let i = 0; i < lines.length; i++) {
           const lineBox = m.measureText(lines[i])
           const lx = (w - lineBox.width) / 2
@@ -233,16 +294,18 @@ export default function HalftoneWordmarkFooter({
         const face = o.fontWeight + " 100px " + o.fontFamily
         m.font = face
         const word = lines[0]
-        const fit = hwfFitSize(m.measureText(word).width, w * 1.02)
+        const fit = hwfFitSize(m.measureText(word).width, w * (isMobile ? 0.94 : 1.02))
         m.font = o.fontWeight + " " + fit + "px " + o.fontFamily
         const box = m.measureText(word)
         const cap = box.actualBoundingBoxAscent || fit * 0.72
-        m.fillText(word, (w - box.width) / 2, h + cap * c)
+        const baseY = isMobile ? h - 14 : h + cap * c
+        m.fillText(word, (w - box.width) / 2, baseY)
       }
 
       const img = m.getImageData(0, 0, w, h).data
 
-      const gap = Math.max(3, o.dotGap)
+      // Dynamic gap on mobile so text has enough resolution to be clearly legible
+      const gap = isMobile ? Math.max(3, Math.min(o.dotGap, 4)) : Math.max(3, o.dotGap)
       const gapCols = Math.ceil(w / gap)
       const rows = Math.ceil(h / gap)
       const tmp = []
@@ -353,7 +416,7 @@ export default function HalftoneWordmarkFooter({
     const wake = () => { awake = true; if (!raf && visible) raf = requestAnimationFrame(loop) }
 
     const toLocal = (e: PointerEv) => {
-      const b = canvas.getBoundingClientRect()
+      const b = root.getBoundingClientRect()
       return [e.clientX - b.left, e.clientY - b.top]
     }
     const onMove = (e: PointerEv) => { if (!opts.current.interactive) return; const p = toLocal(e); px = p[0]; py = p[1]; wake() }
@@ -399,7 +462,14 @@ export default function HalftoneWordmarkFooter({
     <footer
       ref={rootRef}
       className={"hwf-root " + className}
-      style={{ height, "--hwf-bg": colors.background, "--hwf-ink": colors.ink, "--hwf-mono": monoFamily, "--hwf-cols": cols.length || 0 } as React.CSSProperties}
+      style={{
+        "--hwf-height": height,
+        "--hwf-bg": colors.background,
+        "--hwf-ink": colors.ink,
+        "--hwf-warm": colors.warm,
+        "--hwf-mono": monoFamily,
+        "--hwf-cols": cols.length || 0,
+      } as React.CSSProperties}
     >
       <style>{HWF_CSS}</style>
       <canvas ref={canvasRef} aria-hidden="true" />

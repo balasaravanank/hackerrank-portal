@@ -27,7 +27,7 @@ export default function WhatIsCrew() {
     <section className="px-6 py-20 sm:py-28 border-t border-border">
       <div className="max-w-[1080px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Left — text */}
+          {/* Left -text */}
           <div className="flex gap-5 flex-col items-start">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -55,13 +55,13 @@ export default function WhatIsCrew() {
               </p>
               <p className="text-lg lg:max-w-md leading-[1.7] text-foreground/60 text-left">
                 As a member, you get access to the same assessment and practice tools
-                used in real technical hiring — coding tests, role-based challenges,
+                used in real technical hiring -coding tests, role-based challenges,
                 mock interviews, and certifications. Not theory. Actual preparation.
               </p>
             </motion.div>
           </div>
 
-          {/* Right — stat cards */}
+          {/* Right -stat cards */}
           <div className="flex justify-center items-center">
             <div className="grid text-left grid-cols-1 sm:grid-cols-2 w-full gap-3">
               {stats.map((stat, i) => (

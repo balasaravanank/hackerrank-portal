@@ -387,7 +387,7 @@ export default function WaitlistForm() {
                 <>
                   <CardHeader>
                     <CardTitle className="text-xl">Why do you want to join?</CardTitle>
-                    <CardDescription>Optional — a sentence or two is fine.</CardDescription>
+                    <CardDescription>Optional -a sentence or two is fine.</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <motion.div variants={fadeInUp} className="space-y-2">

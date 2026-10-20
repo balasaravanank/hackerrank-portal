@@ -18,12 +18,12 @@ const faqs = [
   {
     id: "2",
     q: "Who can join?",
-    a: "Any student currently enrolled at Saveetha Engineering College — any year, any department. Whether you're a competitive programmer or just getting started, there's a place for you.",
+    a: "Any student currently enrolled at Saveetha Engineering College -any year, any department. Whether you're a competitive programmer or just getting started, there's a place for you.",
   },
   {
     id: "3",
     q: "Is there a cost to participate?",
-    a: "No. Everything — the platform access, tools, competitions, certifications, and premium subscriptions for winners — is provided free through HackerRank.",
+    a: "No. Everything -the platform access, tools, competitions, certifications, and premium subscriptions for winners -is provided free through HackerRank.",
   },
   {
     id: "4",
@@ -38,7 +38,7 @@ const faqs = [
   {
     id: "6",
     q: "When does Campus Crew launch at Saveetha?",
-    a: "Very soon. Waitlist members will be the first to know — we'll notify you by email the moment we go live.",
+    a: "Very soon. Waitlist members will be the first to know -we'll notify you by email the moment we go live.",
   },
 ];
 

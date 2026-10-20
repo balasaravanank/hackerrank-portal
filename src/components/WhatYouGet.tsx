@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const resources = [
   {
     name: "HackerRank for Work",
-    desc: "Enterprise-grade coding tests, MCQs, and role-based assessments — the same platform companies use to hire.",
+    desc: "Enterprise-grade coding tests, MCQs, and role-based assessments -the same platform companies use to hire.",
   },
   {
     name: "SkillUp",
@@ -14,7 +14,7 @@ const resources = [
   },
   {
     name: "Infinity Plan",
-    desc: "1-year premium HackerRank subscription awarded to event winners. Access the full platform — unlimited practice, advanced tracks, certifications, and priority support — all unlocked for 12 months.",
+    desc: "1-year premium HackerRank subscription awarded to event winners. Access the full platform -unlimited practice, advanced tracks, certifications, and priority support -all unlocked for 12 months.",
   },
   {
     name: "Mock Interviews",
@@ -145,7 +145,7 @@ export default function WhatYouGet() {
             Real tools. Real support. Free access.
           </h2>
           <p className="text-foreground/50 text-base leading-relaxed">
-            {resources[5].name} — {resources[5].desc}
+            {resources[5].name} -{resources[5].desc}
           </p>
         </motion.div>
       </div>

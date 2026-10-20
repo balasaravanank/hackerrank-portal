@@ -103,7 +103,7 @@ export default function Events() {
               </Card>
             </motion.div>
 
-            {/* ── Hackathons — kanban + team + countdown ── */}
+            {/* ── Hackathons -kanban + team + countdown ── */}
             <motion.div
               custom={1}
               variants={cardVariants}
@@ -119,7 +119,7 @@ export default function Events() {
                     {/* Glow behind the project */}
                     <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-24 bg-accent/[0.06] blur-2xl rounded-full transition-all duration-700 group-hover:h-32 group-hover:bg-accent/[0.1]"></div>
 
-                    {/* Project showcase — browser mockup */}
+                    {/* Project showcase -browser mockup */}
                     <div className="relative mx-auto w-full max-w-[220px] rounded-xl border border-border bg-card shadow-sm transition-transform duration-500 group-hover:-translate-y-1 group-hover:shadow-lg">
                       {/* Browser chrome */}
                       <div className="flex items-center gap-1.5 border-b border-border px-3 py-2">
@@ -187,7 +187,7 @@ export default function Events() {
               </Card>
             </motion.div>
 
-            {/* ── Workshops — live session split ── */}
+            {/* ── Workshops -live session split ── */}
             <motion.div
               custom={2}
               variants={cardVariants}
@@ -212,7 +212,7 @@ export default function Events() {
                           <span className="block size-2 rounded-full bg-green-400/60"></span>
                         </div>
                         <div className="flex-1 mx-2 h-3.5 rounded-full bg-foreground/[0.05] flex items-center justify-center">
-                          <span className="text-[6px] text-foreground/25 font-medium">Workshop — DSA Basics</span>
+                          <span className="text-[6px] text-foreground/25 font-medium">Workshop -DSA Basics</span>
                         </div>
                       </div>
                       {/* Slide area */}
@@ -282,7 +282,7 @@ export default function Events() {
               </Card>
             </motion.div>
 
-            {/* ── Tech Talks — webinar mockup ── */}
+            {/* ── Tech Talks -webinar mockup ── */}
             <motion.div
               custom={3}
               variants={cardVariants}
@@ -386,7 +386,7 @@ export default function Events() {
               </Card>
             </motion.div>
 
-            {/* ── Mock Interviews — split-screen coding interview ── */}
+            {/* ── Mock Interviews -split-screen coding interview ── */}
             <motion.div
               custom={4}
               variants={cardVariants}
