@@ -293,7 +293,6 @@ export default function WaitlistForm() {
                         value={form.name}
                         onChange={(e) => update("name", e.target.value)}
                         onKeyDown={(e) => e.key === "Enter" && nextStep()}
-                        autoFocus
                         className="transition-all duration-300 focus:ring-2 focus:ring-accent/20 focus:border-accent"
                       />
                     </motion.div>
@@ -318,7 +317,6 @@ export default function WaitlistForm() {
                         value={form.email}
                         onChange={(e) => update("email", e.target.value)}
                         onKeyDown={(e) => e.key === "Enter" && nextStep()}
-                        autoFocus
                         className="transition-all duration-300 focus:ring-2 focus:ring-accent/20 focus:border-accent"
                       />
                       {form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) && (
@@ -397,7 +395,6 @@ export default function WaitlistForm() {
                         placeholder="I'm interested because..."
                         value={form.reason}
                         onChange={(e) => update("reason", e.target.value)}
-                        autoFocus
                         className="min-h-[100px] transition-all duration-300 focus:ring-2 focus:ring-accent/20 focus:border-accent resize-none"
                       />
                     </motion.div>

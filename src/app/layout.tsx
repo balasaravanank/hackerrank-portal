@@ -30,7 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <link rel="icon" href="/hackerrank-icon.png" type="image/png" />
         <link rel="shortcut icon" href="/hackerrank-icon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/hackerrank-icon.png" />
-        <script dangerouslySetInnerHTML={{ __html: `if(window.location.hash){history.replaceState(null,"",window.location.pathname);window.scrollTo(0,0);}` }} />
+        <script dangerouslySetInnerHTML={{ __html: `if("scrollRestoration"in history)history.scrollRestoration="manual";if(window.location.hash)history.replaceState(null,"",window.location.pathname);window.scrollTo(0,0);` }} />
       </head>
       <body className="bg-background text-foreground font-sans">{children}</body>
     </html>
